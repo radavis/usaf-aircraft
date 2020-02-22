@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+require "nokogiri"
+require "pry"
+
+filename = ARGV.first
+
+unless filename
+  puts "USAGE: ./html2csv input.html > output.csv"
+  exit(1)
+end
+
+html = Nokogiri::HTML(open(filename))
+
+header_cells = html.css("table.wikitable tbody tr:first-child th")
+headers = header_cells.map(&:text).map(&:strip)
+headers << "Category"
+headers << "Wikipedia URL"
+headers << "Title"
+puts headers.join(";")
+
+category_cells = html.css("table.wikitable tbody tr:not(:first-child) th")
+categories = category_cells.map(&:text).map(&:strip)
+
+i = -1
+category = ""
+
+rows = html.css("table.wikitable tbody tr")
+rows.each do |row|
+  cells = row.css("td")
+  if cells.size != 6  # number of columns in the table
+    category = categories[i]
+    i += 1
+    next
+  end
+
+  cell_contents = cells.map(&:text)
+  cell_contents.map! { |content| content.gsub(/\[.*?\]/, "") }  # remove '[1]' references
+  cell_contents.map!(&:strip)  # remove surrounding newlines & whitespace
+  cell_contents << category
+
+  a_href = cells.first.css("a[href]")
+  path = a_href.attribute("href").value
+  url = "https://en.wikipedia.org#{path}"
+  cell_contents << url
+
+  title = a_href.attribute("title").value
+  cell_contents << title
+
+  puts cell_contents.join(";")
+end

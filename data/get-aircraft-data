@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+require "csv"
+require "nokogiri"
+require "pry"
+require "open-uri"
+
+filename = ARGV[0]
+
+if !filename
+  puts "USAGE: ./get-aircraft-data input.csv > output.csv"
+  exit(1)
+end
+
+# get urls from csv
+rows = CSV.read(filename, { headers: true, col_sep: ";" })
+
+headers = rows[0].headers
+headers << "Image URL"
+puts headers.join(";")
+
+images = []
+rows.each do |row|
+  url = row["Wikipedia URL"]
+
+  # follow the link
+  html = Nokogiri::HTML(open(url))
+
+  infobox = html.css("table.infobox")
+  image = infobox.css("img")
+  image_url = image.attribute("src").value
+  # image_description = image.attribute("alt").value
+  # todo: extract other interesting fields. e.g. - "Role", "First flight", "Introduction", etc
+
+  # stitch data together
+  row["Image URL"] = image_url
+  puts row.fields.join(";")
+end

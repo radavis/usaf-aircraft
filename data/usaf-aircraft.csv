@@ -1,0 +1,58 @@
+Aircraft;Origin;Type;Variant;In service;Notes;Category;Wikipedia URL;Title
+B-2 Spirit;United States;stealth bomber;;20;;Combat Aircraft;https://en.wikipedia.org/wiki/Northrop_Grumman_B-2_Spirit;Northrop Grumman B-2 Spirit
+B-1 Lancer;United States;strategic bomber;;60;employs variable-sweep wing design;Combat Aircraft;https://en.wikipedia.org/wiki/Rockwell_B-1_Lancer;Rockwell B-1 Lancer
+B-52 Stratofortress;United States;heavy bomber;;75;;Combat Aircraft;https://en.wikipedia.org/wiki/Boeing_B-52_Stratofortress;Boeing B-52 Stratofortress
+F-22 Raptor;United States;stealth air superiority;;178;;Combat Aircraft;https://en.wikipedia.org/wiki/Lockheed_Martin_F-22_Raptor;Lockheed Martin F-22 Raptor
+F-35 Lightning II;United States;stealth multirole;F-35A;205;1,541 on order;Combat Aircraft;https://en.wikipedia.org/wiki/Lockheed_Martin_F-35_Lightning_II;Lockheed Martin F-35 Lightning II
+F-15 Eagle;United States;air superiority;F-15C;235;23 D variants are used for training;Combat Aircraft;https://en.wikipedia.org/wiki/McDonnell_Douglas_F-15_Eagle;McDonnell Douglas F-15 Eagle
+F-15 Strike Eagle;United States;multirole;F-15E;218;;Combat Aircraft;https://en.wikipedia.org/wiki/McDonnell_Douglas_F-15E_Strike_Eagle;McDonnell Douglas F-15E Strike Eagle
+F-16 Fighting Falcon;United States;multirole;F-16C;791;150 D variants are used for training;Combat Aircraft;https://en.wikipedia.org/wiki/General_Dynamics_F-16_Fighting_Falcon;General Dynamics F-16 Fighting Falcon
+A-10 Thunderbolt II;United States;attack;A-10C;287;;Combat Aircraft;https://en.wikipedia.org/wiki/Fairchild_Republic_A-10_Thunderbolt_II;Fairchild Republic A-10 Thunderbolt II
+Lockheed AC-130;United States;ground attack;AC-130U/W;35;of which seven are the J variant;Combat Aircraft;https://en.wikipedia.org/wiki/Lockheed_AC-130;Lockheed AC-130
+Boeing E-4;United States;command and control;E-4B;4;;AWACS;https://en.wikipedia.org/wiki/Boeing_E-4;Boeing E-4
+Boeing E-3;United States;AWACS;E-3B/C/G;31;;AWACS;https://en.wikipedia.org/wiki/Boeing_E-3_Sentry;Boeing E-3 Sentry
+Global Express;Canada;command and control / BACN;E-11A;4;;AWACS;https://en.wikipedia.org/wiki/Bombardier_Global_Express;Bombardier Global Express
+EC-130H Compass Call;United States;radar jamming / SEAD;;15;;Electronic Warfare;https://en.wikipedia.org/wiki/Lockheed_EC-130H_Compass_Call;Lockheed EC-130H Compass Call
+EC-130 Commando Solo;United States;radar jamming / SEAD;EC-130J;7;;Electronic Warfare;https://en.wikipedia.org/wiki/Lockheed_EC-130;Lockheed EC-130
+Falcon 20;France;SIGINT / ELINT;;2;;Reconnaissance;https://en.wikipedia.org/wiki/Falcon_20;Falcon 20
+Lockheed U-2;United States;high altitude  reconnaissance;U-2S;31;four TU-2S’s provide training;Reconnaissance;https://en.wikipedia.org/wiki/Lockheed_U-2;Lockheed U-2
+RC-26 Metro;United States;SIGINT /  surveillance;;11;;Reconnaissance;https://en.wikipedia.org/wiki/Fairchild_C-26_Metroliner;Fairchild C-26 Metroliner
+E-8 Joint STARS;United States;AGS / ISTAR;E-8C;17;one used for training;Reconnaissance;https://en.wikipedia.org/wiki/Northrop_Grumman_E-8_Joint_STARS;Northrop Grumman E-8 Joint STARS
+CASA CN-235;Spain;SIGINT / ELINT;;5;;Reconnaissance;https://en.wikipedia.org/wiki/CASA/IPTN_CN-235;CASA/IPTN CN-235
+Boeing OC-135B;United States;SIGINT /  surveillance;;2;;Reconnaissance;https://en.wikipedia.org/wiki/Boeing_OC-135B_Open_Skies;Boeing OC-135B Open Skies
+Bombardier Dash 8;Canada;SIGINT / ELINT;;6;;Reconnaissance;https://en.wikipedia.org/wiki/Bombardier_Dash_8;Bombardier Dash 8
+DHC-6 Twin Otter;Canada;SIGINT / ELINT;;1;;Reconnaissance;https://en.wikipedia.org/wiki/De_Havilland_Canada_DHC-6_Twin_Otter;De Havilland Canada DHC-6 Twin Otter
+Beechcraft MC-12;United States;SIGINT /  surveillance;W;42;;Reconnaissance;https://en.wikipedia.org/wiki/Beechcraft_C-12_Huron;Beechcraft C-12 Huron
+Boeing KC-135;United States;aerial refueling;KC-135R/T;397;;Tanker;https://en.wikipedia.org/wiki/Boeing_KC-135_Stratotanker;Boeing KC-135 Stratotanker
+KC-10 Extender;United States;aerial refueling;;58;;Tanker;https://en.wikipedia.org/wiki/McDonnell_Douglas_KC-10_Extender;McDonnell Douglas KC-10 Extender
+KC-46 Pegasus;United States;aerial refueling;;12;52 on order;Tanker;https://en.wikipedia.org/wiki/Boeing_KC-46_Pegasus;Boeing KC-46 Pegasus
+Lockheed Martin KC-130;United States;aerial refueling / transport;H/J/P;60;39 are the KC-130J variant - 30 on order;Tanker;https://en.wikipedia.org/wiki/Lockheed_Martin_KC-130;Lockheed Martin KC-130
+C-5 Galaxy;United States;strategic airlifter;C-5M;52;;Transport;https://en.wikipedia.org/wiki/Lockheed_C-5_Galaxy;Lockheed C-5 Galaxy
+Boeing C-17;United States;strategic airlifter;;222;;Transport;https://en.wikipedia.org/wiki/Boeing_C-17_Globemaster_III;Boeing C-17 Globemaster III
+C-130J Super Hercules;United States;tactical airlifter;C-130J;115;35 on order;Transport;https://en.wikipedia.org/wiki/C-130J;C-130J
+C-130 Hercules;United States;transport;C-130H;196;ten are the LC-130 variant;Transport;https://en.wikipedia.org/wiki/Lockheed_C-130_Hercules;Lockheed C-130 Hercules
+Lockheed HC-130J;United States;SAR / transport;;20;19 on order;Transport;https://en.wikipedia.org/wiki/Lockheed_HC-130#HC-130J;Lockheed HC-130
+Lockheed HC-130P/N;United States;SAR / transport;;9;;Transport;https://en.wikipedia.org/wiki/Lockheed_HC-130#USAF_HC-130P/N_Combat_King;Lockheed HC-130
+Beechcraft 1900;United States;transport;C-12J;3;;Transport;https://en.wikipedia.org/wiki/Beechcraft_1900;Beechcraft 1900
+Cessna 208;United States;transport / utility;;2;;Transport;https://en.wikipedia.org/wiki/Cessna_208_Caravan;Cessna 208 Caravan
+Pilatus PC-12;Switzerland;transport / utility;U-28A;15;;Transport;https://en.wikipedia.org/wiki/Pilatus_PC-12;Pilatus PC-12
+DHC-6 Twin Otter;Canada;utility transport;;1;STOL capable aircraft;Transport;https://en.wikipedia.org/wiki/De_Havilland_Canada_DHC-6_Twin_Otter;De Havilland Canada DHC-6 Twin Otter
+M28 Skytruck;Poland;transport;C-145A;5;;Transport;https://en.wikipedia.org/wiki/PZL_M28_Skytruck;PZL M28 Skytruck
+Beechcraft C-12;United States;utility / transport;;26;;Transport;https://en.wikipedia.org/wiki/Beechcraft_C-12_Huron;Beechcraft C-12 Huron
+Dornier 328;Germany;transport;;20;;Transport;https://en.wikipedia.org/wiki/Dornier_328;Dornier 328
+Boeing VC-25;United States;Presidential transport;;2;;Transport;https://en.wikipedia.org/wiki/Boeing_VC-25;Boeing VC-25
+Boeing C-32;United States;VIP transport;;4;;Transport;https://en.wikipedia.org/wiki/Boeing_C-32;Boeing C-32
+Boeing C-40;United States;VIP transport;C-40B/C;12;;Transport;https://en.wikipedia.org/wiki/Boeing_C-40_Clipper;Boeing C-40 Clipper
+Gulfstream IV;United States;VIP transport;;1;;Transport;https://en.wikipedia.org/wiki/Gulfstream_IV;Gulfstream IV
+Learjet 35;United States;VIP transport;C-21A;23;;Transport;https://en.wikipedia.org/wiki/Learjet_35;Learjet 35
+Bell UH-1N;United States;utility;;64;;Helicopter;https://en.wikipedia.org/wiki/Bell_UH-1N_Twin_Huey;Bell UH-1N Twin Huey
+V-22 Osprey;United States;CSAR;CV-22B;44;6 on order;Helicopter;https://en.wikipedia.org/wiki/Bell_Boeing_V-22_Osprey;Bell Boeing V-22 Osprey
+Sikorsky HH-60;United States;CSAR;HH-60G/U/W;99;;Helicopter;https://en.wikipedia.org/wiki/Sikorsky_HH-60_Pave_Hawk;Sikorsky HH-60 Pave Hawk
+AgustaWestland AW139;Italy;utility;MH-139;;Bell UH-1N replacement – 84 on order;Helicopter;https://en.wikipedia.org/wiki/AgustaWestland_AW139;AgustaWestland AW139
+Bell TH-1;United States;rotorcraft trainer;UH-1H;38;;Trainer Aircraft;https://en.wikipedia.org/wiki/Bell_UH-1_Iroquois;Bell UH-1 Iroquois
+T-38 Talon;United States;jet trainer;T-38A/C;501;;Trainer Aircraft;https://en.wikipedia.org/wiki/Northrop_T-38_Talon;Northrop T-38 Talon
+T-6 Texan II;United States;advanced trainer;T-6A;447;;Trainer Aircraft;https://en.wikipedia.org/wiki/Beechcraft_T-6_Texan_II;Beechcraft T-6 Texan II
+T-1 Jayhawk;United States|;multi-engine trainer;;178;;Trainer Aircraft;https://en.wikipedia.org/wiki/Raytheon_T-1_Jayhawk;Raytheon T-1 Jayhawk
+Boeing TC-135;United States;multi-engine trainer;;3;;Trainer Aircraft;https://en.wikipedia.org/wiki/Boeing_RC-135;Boeing RC-135
+Diamond DA20;Austria;trainer;;54;contracted by DOSS Aviation;Trainer Aircraft;https://en.wikipedia.org/wiki/Diamond_DA20;Diamond DA20
+A Embraer EMB 314;Brazil;trainer;;11;7 on order;Trainer Aircraft;https://en.wikipedia.org/wiki/Embraer_EMB_314_Super_Tucano;Embraer EMB 314 Super Tucano
