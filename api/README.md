@@ -4,8 +4,35 @@ Spring Boot Application
 
 ## API Specification
 
-* `GET /aircraft`
-* `GET /aircraft/:id`
+* `GET /aircraftModel`
+* `GET /aircraftModel/:id`
+
+## Entity-Relationship Diagram
+
+Copy-paste the following into [http://nomnoml.com]:
+
+```no-highlight
+[AircraftModel | 
+  name
+  manufacturer_id
+  category_id
+  wikipedia_url
+  image_url
+]
+
+[Manufacturer | 
+  name
+  location
+]
+
+[Manufacturer]->[AircraftModel]
+
+[Category |
+  name
+]
+
+[Category]->[AircraftModel]
+```
 
 ## Generate App Base
 
