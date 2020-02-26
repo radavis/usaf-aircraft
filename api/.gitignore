@@ -32,3 +32,4 @@ out/
 
 .env*
 bin/
+src/main/resources/db/schema.sql
