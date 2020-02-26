@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -e
+
+usage="usage: ./util/db_create_migration name_of_your_migration"
+
+if [[ "$#" -ne 1 ]]; then
+    echo "$usage"
+    exit 0
+fi
+
+migration_name="$1"
+migration_path="./src/main/resources/db/migration"
+mkdir -p "$migration_path"
+timestamp=$(env TZ=UTC date "+%Y%m%d%H%M%S")
+
+filename="$migration_path"/V"$timestamp"__"$migration_name".sql
+echo "creating $filename"
+echo "-- $migration_name" > "$filename"
+
+undo_filename="$migration_path"/U"$timestamp"__"$migration_name".sql
+echo "creating $undo_filename"
+echo -e "-- undo $migration_name\n\n" > "$undo_filename"
+echo -e "-- remove flyway migration version\n" >> "$undo_filename"
+echo "delete from flyway_schema_history" >> "$undo_filename"
+echo "where version = '$timestamp';" >> "$undo_filename"

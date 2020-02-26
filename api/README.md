@@ -76,7 +76,46 @@ $ dotenv ./util/db_create
 $ dotenv ./util/db_info
 ```
 
+## Create a database migration
+
+```bash
+$ ./util/db_create_migration your_migration_name  # e.g. - create_table_AircraftModels
+```
+
+Edit the generated files to include the necessary SQL statements:
+
+```sql
+-- ./src/main/resources/db/migration/VYYYYMMDDHHMMSS_create_table_AircraftModels.sql
+-- create_table_AircraftModels
+create table AircraftModels
+  id serial,
+  name varchar(255) not null,
+  wikipedia_url text,
+  image_url text
+);
+```
+
+```sql
+-- ./src/main/resources/db/migration/UYYYYMMDDHHMMSS_create_table_AircraftModels.sql
+-- undo create_table_AircraftModels
+drop table AircraftModels;
+```
+
+Run the migration:
+
+```bash
+$ dotenv ./gradlew flywayMigrate
+```
+
+Undo the migration:
+
+```bash
+$ dotenv ./util/db_undo_migration path/to/migration/UYYYYMMDDHHMMSS_file.sql
+```
+
 ## Generate App Base
+
+How this Spring Boot app was initialized:
 
 ```bash
 $ mkdir api && cd $_
