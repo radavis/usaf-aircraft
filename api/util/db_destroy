@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+
+database_path=${DATABASE_URL##*/}
+database_name=${database_path%%\?*}
+
+mysql -e "drop database $database_name;"
+mysql -e "revoke all privileges, grant option from '$DATABASE_USERNAME'@'localhost';"
+mysql -e "drop user '$DATABASE_USERNAME'@'localhost';"
+mysql -e "flush privileges;"

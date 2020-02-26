@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
-set -e
+set -e  # exit on error
+# set -x  # show commands, expand variables when executing
 
-database_path=${SPRING_DATASOURCE_URL##*/}
+database_path=${DATABASE_URL##*/}
 database_name=${database_path%%\?*}
 
 mysql -e "create database $database_name;"
-mysql -e "create user '$SPRING_DATASOURCE_USERNAME'@'localhost' identified by '$SPRING_DATASOURCE_PASSWORD';"
-mysql -e "grant all privileges on $database_name.* to '$SPRING_DATASOURCE_USERNAME'@'localhost';"
+mysql -e "create user '$DATABASE_USERNAME'@'localhost' identified by '$DATABASE_PASSWORD';"
+mysql -e "grant all privileges on $database_name.* to '$DATABASE_USERNAME'@'localhost';"
 mysql -e "flush privileges;"
 
 # References

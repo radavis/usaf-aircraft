@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -e
+
+database_path=${DATABASE_URL##*/}
+database_name=${database_path%%\?*}
+
+mysql -e "show databases like '$database_name';"
+mysql -e "select host, user from mysql.user where user like '$DATABASE_USERNAME';"
+mysql -e "show grants for '$DATABASE_USERNAME'@'localhost';"
+mysql "$database_name" -e "show tables;"
