@@ -12,15 +12,16 @@ if !filename
 end
 
 # get urls from csv
-rows = CSV.read(filename, { headers: true, col_sep: ";" })
+csv_rows = CSV.read(filename, { headers: true, col_sep: ";" })
 
-headers = rows[0].headers
+headers = csv_rows[0].headers
+headers << "Manufacturer"
 headers << "Image URL"
 puts headers.join(";")
 
 images = []
-rows.each do |row|
-  url = row["Wikipedia URL"]
+csv_rows.each do |csv_row|
+  url = csv_row["Wikipedia URL"]
 
   # follow the link
   html = Nokogiri::HTML(open(url))
@@ -29,9 +30,21 @@ rows.each do |row|
   image = infobox.css("img")
   image_url = image.attribute("src").value
   # image_description = image.attribute("alt").value
+
   # todo: extract other interesting fields. e.g. - "Role", "First flight", "Introduction", etc
+  infobox_rows = infobox.css("tbody tr")
+  infobox_rows.each do |infobox_row|
+    th = infobox_row.css("th")
+    td = infobox_row.css("td")
+    next if th.empty? && td.empty?
+    # puts "key: ", th.text
+    # puts "value: ", td.text
+    if th.text.include?("Manufacturer")
+      csv_row["Manufacturer"] = td.css("a").attribute("title")
+    end
+  end
 
   # stitch data together
-  row["Image URL"] = image_url
-  puts row.fields.join(";")
+  csv_row["Image URL"] = image_url
+  puts csv_row.fields.join(";")
 end
