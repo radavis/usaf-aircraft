@@ -110,7 +110,7 @@ $ dotenv ./gradlew flywayMigrate
 Undo the migration:
 
 ```bash
-$ dotenv ./util/db_undo_migration path/to/migration/UYYYYMMDDHHMMSS_file.sql
+$ dotenv ./util/db_undo_migration src/main/resources/db/migration/UYYYYMMDDHHMMSS_undo_migration_file.sql
 ```
 
 ## Generate App Base

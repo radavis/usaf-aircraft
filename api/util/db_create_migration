@@ -17,7 +17,7 @@ filename="$migration_path"/V"$timestamp"__"$migration_name".sql
 echo "creating $filename"
 echo "-- $migration_name" > "$filename"
 
-undo_filename="$migration_path"/U"$timestamp"__"$migration_name".sql
+undo_filename="$migration_path"/U"$timestamp"__undo_"$migration_name".sql
 echo "creating $undo_filename"
 echo -e "-- undo $migration_name\n\n" > "$undo_filename"
 echo -e "-- remove flyway migration version\n" >> "$undo_filename"
