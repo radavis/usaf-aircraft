@@ -33,10 +33,15 @@ dependencies {
 
 flyway {
 	url = "jdbc:$System.env.DATABASE_URL"
-    user = "$System.env.DATABASE_USERNAME"
+	user = "$System.env.DATABASE_USERNAME"
 	password = "$System.env.DATABASE_PASSWORD"
 }
 
 test {
 	useJUnitPlatform()
+
+	testLogging {
+		events "PASSED", "SKIPPED", "FAILED"
+		// showStandardStreams = true
+	}
 }

@@ -1,0 +1,34 @@
+package mil.usaf.logux.aircraftapi.category;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+import org.hibernate.annotations.CreationTimestamp;
+import java.util.Date;
+
+@Entity
+@Getter
+@NoArgsConstructor
+@ToString
+// @Table(name = "category")
+public class Category {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+
+  @NotBlank @Setter private String name;
+
+  @CreationTimestamp
+  // @Column(name = "created_at")
+  private Date createdAt;
+}
