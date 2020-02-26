@@ -1,0 +1,33 @@
+-- seed_table_manufacturer
+
+insert into manufacturer(name, location, created_at)
+values 
+  ('AgustaWestland', 'Rome, Italy', now()),
+  ('Beechcraft', 'Wichita, Kansas, United States', now()),
+  ('Bell Helicopter', 'Fort Worth, Texas, United States', now()),
+  ('Boeing', 'Chicago, Illinois, United States', now()),
+  ('Boeing Defense, Space & Security', 'Arlington, Virginia, United States', now()),
+  ('Bombardier Aviation', 'Dorval, Quebec, Canada', now()),
+  ('Cessna', 'Wichita, Kansas, United States', now()),
+  ('Construcciones Aeronáuticas SA', 'Spain', now()),
+  ('Dassault Aviation', 'Paris, France', now()),
+  ('De Havilland Canada', 'Toronto, Ontario, Canada', now()),
+  ('Diamond Aircraft Industries', 'Austria', now()),
+  ('Dornier Flugzeugwerke', 'Manzell, Friedrichshafen, Germany', now()),
+  ('Embraer', 'São José dos Campos, São Paulo, Brazil', now()),
+  ('Fairchild Aircraft', 'San Antonio, Texas, United States', now()),
+  ('General Dynamics', 'Reston, Virginia, United States', now()),
+  ('Grumman', 'Bethpage, New York', now()),
+  ('Gulfstream Aerospace', 'Savannah, Georgia, United States', now()),
+  ('Learjet', 'Wichita, Kansas, United States', now()),
+  ('Lockheed Corporation', 'Calabasas, California', now()),
+  ('Lockheed Martin', 'Bethesda, Maryland, United States', now()),
+  ('Lockheed Martin Aeronautics', 'Fort Worth, Texas, United States', now()),
+  ('McDonnell Douglas', 'Berkeley, Missouri, United States', now()),
+  ('Northrop Corporation', 'Hawthorne, California, United States', now()),
+  ('PZL Mielec', 'Mielec, Poland', now()),
+  ('Pilatus Aircraft', 'Stans, Switzerland', now()),
+  ('Raytheon', 'Waltham, Massachusetts, United States', now()),
+  ('Rockwell International', 'Milwaukee, Wisconsin, United States', now()),
+  ('Sikorsky Aircraft Corporation', 'Stratford, Connecticut, United States', now()),
+  ('Textron Aviation', 'Wichita, Kansas, United States', now());

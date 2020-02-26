@@ -15,7 +15,7 @@ Spring Boot Application
 Copy-paste the following into [http://nomnoml.com]:
 
 ```no-highlight
-[AircraftModel | 
+[aircraft_model | 
   name
   manufacturer_id
   category_id
@@ -23,18 +23,18 @@ Copy-paste the following into [http://nomnoml.com]:
   image_url
 ]
 
-[Manufacturer | 
+[manufacturer | 
   name
   location
 ]
 
-[Manufacturer]->[AircraftModel]
+[manufacturer]->[aircraft_model]
 
-[Category |
+[category |
   name
 ]
 
-[Category]->[AircraftModel]
+[category]->[aircraft_model]
 ```
 
 ## Store secrets in the environment
@@ -79,15 +79,15 @@ $ dotenv ./util/db_info
 ## Create a database migration
 
 ```bash
-$ ./util/db_create_migration your_migration_name  # e.g. - create_table_AircraftModels
+$ ./util/db_create_migration your_migration_name  # e.g. - create_table_aircraft_models
 ```
 
 Edit the generated files to include the necessary SQL statements:
 
 ```sql
--- ./src/main/resources/db/migration/VYYYYMMDDHHMMSS_create_table_AircraftModels.sql
+-- ./src/main/resources/db/migration/VYYYYMMDDHHMMSS_create_table_aircraft_models.sql
 -- create_table_AircraftModels
-create table AircraftModels
+create table aircraft_models
   id serial,
   name varchar(255) not null,
   wikipedia_url text,
@@ -96,9 +96,9 @@ create table AircraftModels
 ```
 
 ```sql
--- ./src/main/resources/db/migration/UYYYYMMDDHHMMSS_create_table_AircraftModels.sql
--- undo create_table_AircraftModels
-drop table AircraftModels;
+-- ./src/main/resources/db/migration/UYYYYMMDDHHMMSS_create_table_aircraft_models.sql
+-- undo create_table_aircraft_models
+drop table aircraft_models;
 ```
 
 Run the migration:
