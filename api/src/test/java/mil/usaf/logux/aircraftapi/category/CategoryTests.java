@@ -1,12 +1,16 @@
 package mil.usaf.logux.aircraftapi.category;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.Set;
+
 import javax.persistence.PersistenceException;
 import javax.validation.ConstraintViolationException;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,6 +20,9 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import mil.usaf.logux.aircraftapi.aircraftmodel.AircraftModel;
+import mil.usaf.logux.aircraftapi.manufacturer.Manufacturer;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
@@ -79,5 +86,46 @@ public class CategoryTests {
     assertTrue(categoryString.contains("id="));
     assertTrue(categoryString.contains("name=Top Secret Prototype"));
     assertTrue(categoryString.contains("createdAt="));
+  }
+
+  @Test
+  public void test_getAircraftModels() {
+    entityManager.persistAndFlush(category);
+
+    Category experimental = new Category();
+    experimental.setName("Experimental");
+    entityManager.persistAndFlush(experimental);
+
+    Manufacturer bell = new Manufacturer();
+    bell.setName("Bell");
+    entityManager.persistAndFlush(bell);
+
+    Manufacturer northAmerican = new Manufacturer();
+    northAmerican.setName("North American Aviation");
+    entityManager.persistAndFlush(northAmerican);
+
+    AircraftModel x1 = new AircraftModel();
+    AircraftModel x2 = new AircraftModel();
+    AircraftModel x15 = new AircraftModel();
+    x1.setName("X-1");
+    x1.setManufacturer(bell);
+    x1.setCategory(category);
+    entityManager.persistAndFlush(x1);
+
+    x2.setName("X-2");
+    x2.setManufacturer(bell);
+    x2.setCategory(category);
+    entityManager.persistAndFlush(x2);
+
+    x15.setName("X-15");
+    x15.setManufacturer(northAmerican);
+    x15.setCategory(experimental);
+    entityManager.persistAndFlush(x15);
+
+    entityManager.refresh(category);
+    Set<AircraftModel> result = category.getAircraftModels();
+    assertTrue(result.contains(x1));
+    assertTrue(result.contains(x2));
+    assertFalse(result.contains(x15));
   }
 }
