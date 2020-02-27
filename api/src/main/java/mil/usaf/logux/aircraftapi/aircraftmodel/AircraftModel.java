@@ -1,5 +1,6 @@
 package mil.usaf.logux.aircraftapi.aircraftmodel;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,11 +14,8 @@ import lombok.Setter;
 import lombok.ToString;
 import mil.usaf.logux.aircraftapi.category.Category;
 import mil.usaf.logux.aircraftapi.manufacturer.Manufacturer;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
-import java.util.Date;
 
 @Entity
 @Getter
@@ -43,17 +41,11 @@ public class AircraftModel {
   @ToString.Exclude
   private Manufacturer manufacturer;
 
-  @Setter 
-  @ToString.Exclude
-  private String wikipediaUrl;
+  @Setter @ToString.Exclude private String wikipediaUrl;
 
-  @Setter 
-  @ToString.Exclude
-  private String imageUrl;
+  @Setter @ToString.Exclude private String imageUrl;
 
-  @CreationTimestamp
-  private Date createdAt;
+  @CreationTimestamp private Date createdAt;
 
-  @UpdateTimestamp
-  private Date updatedAt;
+  @UpdateTimestamp private Date updatedAt;
 }

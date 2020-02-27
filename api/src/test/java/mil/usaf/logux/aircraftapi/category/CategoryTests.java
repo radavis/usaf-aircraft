@@ -7,10 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Set;
-
 import javax.persistence.PersistenceException;
 import javax.validation.ConstraintViolationException;
-
+import mil.usaf.logux.aircraftapi.aircraftmodel.AircraftModel;
+import mil.usaf.logux.aircraftapi.manufacturer.Manufacturer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,9 +20,6 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import mil.usaf.logux.aircraftapi.aircraftmodel.AircraftModel;
-import mil.usaf.logux.aircraftapi.manufacturer.Manufacturer;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest

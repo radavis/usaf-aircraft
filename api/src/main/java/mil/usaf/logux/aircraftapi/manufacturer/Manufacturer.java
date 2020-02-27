@@ -1,22 +1,20 @@
 package mil.usaf.logux.aircraftapi.manufacturer;
 
+import java.util.Date;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import mil.usaf.logux.aircraftapi.aircraftmodel.AircraftModel;
-
 import org.hibernate.annotations.CreationTimestamp;
-import java.util.Date;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -30,12 +28,11 @@ public class Manufacturer {
   private Long id;
 
   @Column(unique = true)
-  @NotBlank 
-  @Setter 
+  @NotBlank
+  @Setter
   private String name;
 
-  @Setter
-  private String location;
+  @Setter private String location;
 
   @CreationTimestamp
   // @Column(name = "created_at")
