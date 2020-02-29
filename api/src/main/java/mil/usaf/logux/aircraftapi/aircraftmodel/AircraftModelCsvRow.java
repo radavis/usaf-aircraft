@@ -1,31 +1,32 @@
 package mil.usaf.logux.aircraftapi.aircraftmodel;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.opencsv.bean.CsvBindByName;
+import lombok.Getter;
+import lombok.ToString;
 
-@JsonPropertyOrder({
-  "Aircraft",
-  "Origin",
-  "Type",
-  "Variant",
-  "In service",
-  "Notes",
-  "Category",
-  "Wikipedia URL",
-  "Title",
-  "Manufacturer",
-  "Image URL"
-})
+@Getter
+@ToString
 public class AircraftModelCsvRow {
 
-  public String name;
-  public String origin;
-  public String type;
-  public String variant;
-  public Integer inService;
-  public String notes;
-  public String category;
-  public String wikipediaUrl;
-  public String title;
-  public String manufacturer;
-  public String imageUrl;
+  @CsvBindByName public String name;
+
+  @CsvBindByName public String origin;
+
+  @CsvBindByName public String type;
+
+  @CsvBindByName public String variant;
+
+  @CsvBindByName public Integer inService;
+
+  @CsvBindByName public String notes;
+
+  @CsvBindByName public String category;
+
+  @CsvBindByName public String wikipediaUrl;
+
+  @CsvBindByName public String title;
+
+  @CsvBindByName public String manufacturer;
+
+  @CsvBindByName public String imageUrl;
 }

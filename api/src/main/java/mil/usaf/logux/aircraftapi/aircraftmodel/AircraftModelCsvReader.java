@@ -1,16 +1,21 @@
 package mil.usaf.logux.aircraftapi.aircraftmodel;
 
-import com.fasterxml.jackson.databind.MappingIterator;
-import com.fasterxml.jackson.dataformat.csv.CsvMapper;
+import com.opencsv.bean.CsvToBeanBuilder;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.List;
 
 public class AircraftModelCsvReader {
 
-  public static List<AircraftModelCsvRow> readFile(File csvFile) throws Exception {
-    MappingIterator<AircraftModelCsvRow> aircraftModelIterator =
-        new CsvMapper().readerWithTypedSchemaFor(AircraftModelCsvRow.class).readValues(csvFile);
+  private static final char CSV_COLUMN_SEPARATOR = ';';
 
-    return aircraftModelIterator.readAll();
+  public static List<AircraftModelCsvRow> readFile(File csvFile) throws FileNotFoundException {
+    return new CsvToBeanBuilder<AircraftModelCsvRow>(new FileReader(csvFile))
+        .withSeparator(CSV_COLUMN_SEPARATOR)
+        .withIgnoreQuotations(true)
+        .withType(AircraftModelCsvRow.class)
+        .build()
+        .parse();
   }
 }

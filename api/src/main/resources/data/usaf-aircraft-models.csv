@@ -1,4 +1,4 @@
-Aircraft;Origin;Type;Variant;In service;Notes;Category;Wikipedia URL;Title;Manufacturer;Image URL
+name;origin;type;variant;inService;notes;category;wikipediaUrl;title;manufacturer;imageUrl
 B-2 Spirit;United States;stealth bomber;;20;;Combat Aircraft;https://en.wikipedia.org/wiki/Northrop_Grumman_B-2_Spirit;Northrop Grumman B-2 Spirit;Northrop Corporation;//upload.wikimedia.org/wikipedia/commons/thumb/e/ec/B-2_Spirit_%28cropped%29.jpg/300px-B-2_Spirit_%28cropped%29.jpg
 B-1 Lancer;United States;strategic bomber;;60;employs variable-sweep wing design;Combat Aircraft;https://en.wikipedia.org/wiki/Rockwell_B-1_Lancer;Rockwell B-1 Lancer;Rockwell International;//upload.wikimedia.org/wikipedia/commons/thumb/7/7d/B-1B_air_refueling.jpg/300px-B-1B_air_refueling.jpg
 B-52 Stratofortress;United States;heavy bomber;;75;;Combat Aircraft;https://en.wikipedia.org/wiki/Boeing_B-52_Stratofortress;Boeing B-52 Stratofortress;Boeing;//upload.wikimedia.org/wikipedia/commons/thumb/5/59/Boeing_B-52H_Aspect_ratio.jpg/300px-Boeing_B-52H_Aspect_ratio.jpg
