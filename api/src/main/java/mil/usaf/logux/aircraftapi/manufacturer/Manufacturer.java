@@ -1,5 +1,6 @@
 package mil.usaf.logux.aircraftapi.manufacturer;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 import java.util.Set;
 import javax.persistence.Column;
@@ -38,6 +39,7 @@ public class Manufacturer {
   // @Column(name = "created_at")
   private Date createdAt;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "manufacturer")
   private Set<AircraftModel> aircraftModels;
 }

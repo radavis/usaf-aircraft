@@ -4,11 +4,12 @@ Spring Boot Application
 
 ## API Specification
 
-* `GET /aircraftModel`
-* `GET /aircraftModel/:id`
-* `GET /manufacturer`
-* `GET /manufacturer/:id/aircraftModel`
-* `GET /category/:categorySlug/aircraftModel`
+* [x] `GET /aircraftModel`
+* [x] `GET /aircraftModel/:id`
+* [ ] `POST /aircraftModel`
+* [ ] `GET /manufacturer`
+* [ ] `GET /manufacturer/:id/aircraftModel`
+* [ ] `GET /category/:categorySlug/aircraftModel`
 
 ## Entity-Relationship Diagram
 

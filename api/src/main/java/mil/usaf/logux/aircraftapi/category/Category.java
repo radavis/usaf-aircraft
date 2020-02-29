@@ -1,5 +1,6 @@
 package mil.usaf.logux.aircraftapi.category;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 import java.util.Set;
 import javax.persistence.Entity;
@@ -32,6 +33,7 @@ public class Category {
   // @Column(name = "created_at")
   private Date createdAt;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "category")
   private Set<AircraftModel> aircraftModels;
 }
