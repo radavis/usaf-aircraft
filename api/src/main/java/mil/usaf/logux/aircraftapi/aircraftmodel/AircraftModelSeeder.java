@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AircraftModelDataLoader {
+public class AircraftModelSeeder {
 
   @Autowired private AircraftModelRepository aircraftModelRepository;
 
@@ -21,12 +21,12 @@ public class AircraftModelDataLoader {
 
   @Autowired private ManufacturerRepository manufacturerRepository;
 
-  private final Logger logger = LoggerFactory.getLogger(AircraftModelDataLoader.class);
+  private final Logger logger = LoggerFactory.getLogger(AircraftModelSeeder.class);
 
   private final String filename = "src/main/resources/data/usaf-aircraft-models.csv";
 
   @PostConstruct
-  public void importCsv() throws Exception {
+  public void seed() throws Exception {
     File csvFile = new File(filename);
     List<AircraftModelCsvRow> rows = AircraftModelCsvReader.readFile(csvFile);
 
