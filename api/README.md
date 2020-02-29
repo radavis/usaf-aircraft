@@ -80,15 +80,15 @@ $ dotenv ./util/db_info
 ## Create a database migration
 
 ```bash
-$ ./util/db_create_migration your_migration_name  # e.g. - create_table_aircraft_models
+$ ./util/db_create_migration your_migration_name  # e.g. - create_table_aircraft_model
 ```
 
 Edit the generated files to include the necessary SQL statements:
 
 ```sql
--- ./src/main/resources/db/migration/VYYYYMMDDHHMMSS_create_table_aircraft_models.sql
--- create_table_AircraftModels
-create table aircraft_models
+-- ./src/main/resources/db/migration/VYYYYMMDDHHMMSS_create_table_aircraft_model.sql
+-- create_table_aircraft_model
+create table aircraft_model
   id serial,
   name varchar(255) not null,
   wikipedia_url text,
@@ -97,9 +97,9 @@ create table aircraft_models
 ```
 
 ```sql
--- ./src/main/resources/db/migration/UYYYYMMDDHHMMSS_create_table_aircraft_models.sql
--- undo create_table_aircraft_models
-drop table aircraft_models;
+-- ./src/main/resources/db/migration/UYYYYMMDDHHMMSS_create_table_aircraft_model.sql
+-- undo create_table_aircraft_model
+drop table aircraft_model;
 ```
 
 Run the migration:
