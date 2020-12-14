@@ -1,6 +1,6 @@
 # usaf-aircraft
 
-Demostrates how to read data from an HTML table, and export that data to CSV.
+Demonstrates how to read data from an HTML table, and export that data to CSV.
 
 ## Retrieving General USAF Aircraft Information
 
