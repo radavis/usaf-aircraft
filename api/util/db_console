@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-database_path=${DATABASE_URL##*/}
+database_path=${DB_URL##*/}
 database_name=${database_path%%\?*}
 
-mysql -u"$DATABASE_USERNAME" -p"$DATABASE_PASSWORD" "$database_name"
+mysql -u"$DB_USER" -p"$DB_PASSWORD" "$database_name"

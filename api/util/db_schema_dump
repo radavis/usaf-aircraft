@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-database_path=${DATABASE_URL##*/}
+database_path=${DB_URL##*/}
 database_name=${database_path%%\?*}
 schema_path="./src/main/resources/db"
 filename="$schema_path/schema.sql"

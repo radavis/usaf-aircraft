@@ -1,4 +1,4 @@
-package mil.usaf.logux.aircraftapi.manufacturer;
+package mil.usaf.aircraftapi.manufacturer;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

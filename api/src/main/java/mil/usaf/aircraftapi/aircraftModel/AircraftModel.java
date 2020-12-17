@@ -1,4 +1,4 @@
-package mil.usaf.logux.aircraftapi.aircraftmodel;
+package mil.usaf.aircraftapi.aircraftmodel;
 
 import java.util.Date;
 import javax.persistence.Entity;
@@ -12,8 +12,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import mil.usaf.logux.aircraftapi.category.Category;
-import mil.usaf.logux.aircraftapi.manufacturer.Manufacturer;
+import mil.usaf.aircraftapi.category.Category;
+import mil.usaf.aircraftapi.manufacturer.Manufacturer;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 

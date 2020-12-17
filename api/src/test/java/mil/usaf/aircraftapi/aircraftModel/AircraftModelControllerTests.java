@@ -1,4 +1,4 @@
-package mil.usaf.logux.aircraftapi.aircraftmodel;
+package mil.usaf.aircraftapi.aircraftmodel;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
@@ -12,8 +12,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.Optional;
-import mil.usaf.logux.aircraftapi.category.Category;
-import mil.usaf.logux.aircraftapi.manufacturer.Manufacturer;
+import mil.usaf.aircraftapi.category.Category;
+import mil.usaf.aircraftapi.manufacturer.Manufacturer;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

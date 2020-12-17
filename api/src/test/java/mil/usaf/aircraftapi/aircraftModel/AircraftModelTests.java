@@ -1,4 +1,4 @@
-package mil.usaf.logux.aircraftapi.aircraftmodel;
+package mil.usaf.aircraftapi.aircraftmodel;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.PersistenceException;
 import javax.validation.ConstraintViolationException;
-import mil.usaf.logux.aircraftapi.category.Category;
-import mil.usaf.logux.aircraftapi.manufacturer.Manufacturer;
+import mil.usaf.aircraftapi.category.Category;
+import mil.usaf.aircraftapi.manufacturer.Manufacturer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

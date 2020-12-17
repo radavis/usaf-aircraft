@@ -1,12 +1,12 @@
-package mil.usaf.logux.aircraftapi.aircraftmodel;
+package mil.usaf.aircraftapi.aircraftmodel;
 
 import java.io.File;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import mil.usaf.logux.aircraftapi.category.Category;
-import mil.usaf.logux.aircraftapi.category.CategoryRepository;
-import mil.usaf.logux.aircraftapi.manufacturer.Manufacturer;
-import mil.usaf.logux.aircraftapi.manufacturer.ManufacturerRepository;
+import mil.usaf.aircraftapi.category.Category;
+import mil.usaf.aircraftapi.category.CategoryRepository;
+import mil.usaf.aircraftapi.manufacturer.Manufacturer;
+import mil.usaf.aircraftapi.manufacturer.ManufacturerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

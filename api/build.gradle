@@ -1,43 +1,42 @@
 plugins {
-	id 'com.diffplug.gradle.spotless' version "$spotlessVersion"
-	id "org.flywaydb.flyway" version "$flywayVersion"
-	id 'org.springframework.boot' version "$springVersion"
-	id 'io.spring.dependency-management' version "$springDependencyManagementVersion"
-	id 'jacoco'
-	id 'java'
+  id "com.diffplug.spotless" version "$spotlessVersion"
+  id "org.flywaydb.flyway" version "$flywayVersion"
+  id "org.springframework.boot" version "$springVersion"
+  id "io.spring.dependency-management" version "$springDependencyManagementVersion"
+  id 'jacoco'
+  id 'java'
 }
 
-group = 'mil.usaf.logux'
+group = 'mil.usaf'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '11'
 
 configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+  compileOnly {
+    extendsFrom annotationProcessor
+  }
 }
 
 repositories {
-	mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.flywaydb:flyway-core'
-	implementation "com.opencsv:opencsv:$opencsvVersion"
-	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'mysql:mysql-connector-java'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'org.springframework.boot:spring-boot-starter-validation'
+  implementation 'org.flywaydb:flyway-core'
+  implementation "com.opencsv:opencsv:$opencsvVersion"
+  compileOnly 'org.projectlombok:lombok'
+  runtimeOnly 'mysql:mysql-connector-java'
+  annotationProcessor 'org.projectlombok:lombok'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 flyway {
-	url = "jdbc:$System.env.DATABASE_URL"
-	user = "$System.env.DATABASE_USERNAME"
-	password = "$System.env.DATABASE_PASSWORD"
+  url = "jdbc:$System.env.DB_URL"
+  user = "$System.env.DB_USER"
+  password = "$System.env.DB_PASSWORD"
 }
 
 jacoco {
@@ -45,7 +44,18 @@ jacoco {
 }
 
 spotless {
+  ratchetFrom 'origin/master'
+
+  format 'misc', {
+    target '*.gradle', '*.md', '.gitignore'
+
+    trimTrailingWhitespace()
+    indentWithSpaces(2)
+    endWithNewline()
+  }
+
   java {
+    importOrder()
     googleJavaFormat()
     removeUnusedImports()
   }
@@ -54,10 +64,10 @@ spotless {
 compileJava.dependsOn 'spotlessApply'
 
 test {
-	useJUnitPlatform()
+  useJUnitPlatform()
 
-	testLogging {
-		events "PASSED", "SKIPPED", "FAILED"
-		// showStandardStreams = true
-	}
+  testLogging {
+    events "PASSED", "SKIPPED", "FAILED"
+    // showStandardStreams = true
+  }
 }
