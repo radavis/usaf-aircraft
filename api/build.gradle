@@ -55,6 +55,7 @@ spotless {
   }
 
   java {
+    importOrder()
     googleJavaFormat()
     removeUnusedImports()
   }
