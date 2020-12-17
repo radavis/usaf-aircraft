@@ -1,4 +1,4 @@
-package mil.usaf.logux.aircraftapi.aircraftmodel;
+package mil.usaf.aircraftapi.aircraftmodel;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

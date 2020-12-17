@@ -1,4 +1,4 @@
-package mil.usaf.logux.aircraftapi.aircraftmodel;
+package mil.usaf.aircraftapi.aircraftmodel;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 import java.io.File;

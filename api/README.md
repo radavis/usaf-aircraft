@@ -16,7 +16,7 @@ Spring Boot Application
 Copy-paste the following into [http://nomnoml.com]:
 
 ```no-highlight
-[aircraft_model | 
+[aircraft_model |
   name
   manufacturer_id
   category_id
@@ -24,7 +24,7 @@ Copy-paste the following into [http://nomnoml.com]:
   image_url
 ]
 
-[manufacturer | 
+[manufacturer |
   name
   location
 ]
@@ -44,7 +44,7 @@ Copy-paste the following into [http://nomnoml.com]:
 $ cp .env.example .env  # then, customize these variables, as necessary
 $ source ./util/dotenv  # load the dotenv helper function into your current shell session
 $ dotenv ./gradlew bootRun  # prefix commands that need secrets with `dotenv`
-$ DOTENV=.env.test ./gradlew bootRun  # you can override loading the default `.env` file with another file
+$ DOTENV=.env.test dotenv ./gradlew bootRun  # you can override loading the default `.env` file with another file
 ```
 
 The `.env` file is ignored by git (see `.gitignore`). Store any secrets in this
@@ -112,6 +112,15 @@ Undo the migration:
 
 ```bash
 $ dotenv ./util/db_undo_migration src/main/resources/db/migration/UYYYYMMDDHHMMSS_undo_migration_file.sql
+```
+
+## Run the Tests
+
+```bash
+$ cp .env.example .env  # change the database name, user, and password
+$ DOTENV=.env.test dotenv ./util/db_create
+$ DOTENV=.env.test dotenv ./gradlew flywayMigrate
+$ DOTENV=.env.test dotenv ./gradlew test
 ```
 
 ## Generate App Base

@@ -3,7 +3,7 @@ set -e
 
 usage="usage: ./util/db_undo_migration path/to/migration/UYYYYMMDDHHMMSS_file.sql"
 
-database_path=${DATABASE_URL##*/}
+database_path=${DB_URL##*/}
 database_name=${database_path%%\?*}
 
 migration_filename=$1
@@ -13,7 +13,7 @@ if [ ! -f "$migration_filename" ]; then
 fi
 
 mysql \
-    --user="$DATABASE_USERNAME" \
-    --password="$DATABASE_PASSWORD" \
+    --user="$DB_USER" \
+    --password="$DB_PASSWORD" \
     "$database_name" \
     < "$migration_filename"
