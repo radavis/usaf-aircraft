@@ -62,7 +62,7 @@ $ brew install mysql
 $ brew services start mysql
 $ echo $USER  # make a note of your username
 $ mysql -uroot
-mysql> CREATE USER 'your-username'@'localhost' IDENTIFIED WITH BY '';
+mysql> CREATE USER 'your-username'@'localhost' IDENTIFIED BY '';
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'your-username'@'localhost' WITH GRANT OPTION;
 mysql> \q
 ```
