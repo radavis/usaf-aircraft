@@ -42,9 +42,8 @@ Copy-paste the following into [http://nomnoml.com]:
 
 ```bash
 $ cp .env.example .env  # then, customize these variables, as necessary
-$ source ./util/dotenv  # load the dotenv helper function into your current shell session
-$ dotenv ./gradlew bootRun  # prefix commands that need secrets with `dotenv`
-$ DOTENV=.env.test dotenv ./gradlew bootRun  # you can override loading the default `.env` file with another file
+$ set -a; source .env; set +a  # load the varibles defined in .env
+$ ./gradlew bootRun
 ```
 
 The `.env` file is ignored by git (see `.gitignore`). Store any secrets in this
@@ -58,8 +57,6 @@ configuration should be used in production and other cloud environments.
 
 ```bash
 $ mysql --version  # check if mysql is already installed
-$ brew install mysql
-$ brew services start mysql
 $ echo $USER  # make a note of your username
 $ mysql -uroot
 mysql> CREATE USER 'your-username'@'localhost' IDENTIFIED BY '';
@@ -73,8 +70,8 @@ Now, that your local user account has permission to create mysql databases, run
 the provided scripts.
 
 ```bash
-$ dotenv ./util/db_create
-$ dotenv ./util/db_info
+$ ./util/db_create
+$ ./util/db_info
 ```
 
 ## Create a database migration
@@ -105,22 +102,23 @@ drop table aircraft_model;
 Run the migration:
 
 ```bash
-$ dotenv ./gradlew flywayMigrate
+$ ./gradlew flywayMigrate
 ```
 
 Undo the migration:
 
 ```bash
-$ dotenv ./util/db_undo_migration src/main/resources/db/migration/UYYYYMMDDHHMMSS_undo_migration_file.sql
+$ ./util/db_undo_migration src/main/resources/db/migration/UYYYYMMDDHHMMSS_undo_migration_file.sql
 ```
 
 ## Run the Tests
 
 ```bash
-$ cp .env.example .env  # change the database name, user, and password
-$ DOTENV=.env.test dotenv ./util/db_create
-$ DOTENV=.env.test dotenv ./gradlew flywayMigrate
-$ DOTENV=.env.test dotenv ./gradlew test
+$ cp .env.example .env.test  # change the database name, user, and password
+$ set -a; source .env.test; set +a  # load the varibles defined in .env.test
+$ ./util/db_create
+$ ./gradlew flywayMigrate
+$ ./gradlew test
 ```
 
 ## Generate App Base

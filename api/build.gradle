@@ -1,5 +1,6 @@
 plugins {
   id "com.diffplug.spotless" version "$spotlessVersion"
+  id 'org.barfuin.gradle.jacocolog' version '2.0.0'
   id "org.flywaydb.flyway" version "$flywayVersion"
   id "org.springframework.boot" version "$springVersion"
   id "io.spring.dependency-management" version "$springDependencyManagementVersion"
@@ -40,7 +41,7 @@ flyway {
 }
 
 jacoco {
-    toolVersion = "${jacocoVersion}"
+  toolVersion = "${jacocoVersion}"
 }
 
 spotless {
@@ -66,8 +67,19 @@ compileJava.dependsOn 'spotlessApply'
 test {
   useJUnitPlatform()
 
-  testLogging {
-    events "PASSED", "SKIPPED", "FAILED"
-    // showStandardStreams = true
-  }
+  // testLogging {
+  //   events "PASSED", "SKIPPED", "FAILED"
+  //   showStandardStreams = true
+  // }
+
+  finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+  dependsOn test
+
+  // reports {
+  //   xml.required = true
+  //   csv.required = true
+  // }
 }
